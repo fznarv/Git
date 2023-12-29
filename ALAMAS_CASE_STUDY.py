@@ -59,8 +59,8 @@ def count_total(file_name):
                     total_children += Cchild
         
         print(f'\n==========SALES REPORT==========')
-        print(f'  Total Number of Adults: {Aadult}')
-        print(f'  Total Number of Children: {Cchild}') 
+        print(f'  Total Number of Adults: {total_adults}')
+        print(f'  Total Number of Children: {total_children}') 
 
         return total_adults, total_children
         
@@ -133,7 +133,7 @@ while True:
             with open('ALAMAS_CASE_STUDY.txt', 'r') as file:
                 content = file.readlines()
             if not content:
-                print('No reservations found!')
+                print('\nNo reservations found!')
             else:
                 while True:
                     try:

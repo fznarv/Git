@@ -147,11 +147,19 @@ while True:
                         print('Please enter a valid reservation number. ')
 
         elif choice_lower == 'd':
-            total_adults, total_children = count_total(file_name)
-            reserve = Reservation(total_adults, total_children)
-            grand_total = reserve.Overall_total()
-            print(f'  Grand Total: PHP {grand_total:,.2f}\n')
-            continue
+            with open('ALAMAS_CASE_STUDY.txt', 'r') as file:
+                content = file.readlines()
+            if not content:
+                print('\nNo reservations found!')
+            else:            
+                try:
+                    total_adults, total_children = count_total(file_name)
+                    reserve = Reservation(total_adults, total_children)
+                    grand_total = reserve.Overall_total()
+                    print(f'  Grand Total: PHP {grand_total:,.2f}\n')
+                    continue
+                except:
+                    pass
             
         elif choice_lower == 'e':
             print('Exit Program. Thank you!')
